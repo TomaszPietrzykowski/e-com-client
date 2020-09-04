@@ -11,6 +11,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import UserIcon from "@material-ui/icons/Person";
 import CartIcon from "@material-ui/icons/ShoppingCartOutlined";
 import ExpandIcon from "@material-ui/icons/ExpandMore";
+import MenuIcon from "@material-ui/icons/Menu";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,6 +42,22 @@ const useStyles = makeStyles((theme) => ({
     outline: "none",
     minHeight: 35,
     width: "33%",
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
+  },
+  menuBtnContainer: {
+    display: "none",
+    outline: "none",
+    minHeight: 35,
+    width: "33%",
+    [theme.breakpoints.down("md")]: {
+      display: "flex",
+    },
+  },
+  menuBtn: {
+    color: "#f02a67",
+    fontSize: "2rem",
   },
   input: {
     minWidth: 200,
@@ -107,6 +124,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
   },
   navigation: {
     display: "flex",
@@ -121,6 +141,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     padding: "15px 20px",
+    cursor: "pointer",
   },
   expandIcon: {
     color: theme.palette.text.secondary,
@@ -136,6 +157,9 @@ const Header = () => {
       <div className={classes.container}>
         <div className={classes.navbar}>
           <div className={classes.topBar}>
+            <div className={classes.menuBtnContainer}>
+              <MenuIcon className={classes.menuBtn} />
+            </div>
             <form className={classes.search}>
               <input
                 type="text"
@@ -179,7 +203,7 @@ const Header = () => {
                 <ExpandIcon className={classes.expandIcon} />
               </li>
               <li className={classes.tab}>
-                <div>Pielegnacja Skóry</div>
+                <div>Skóra</div>
                 <ExpandIcon className={classes.expandIcon} />
               </li>
               <li className={classes.tab}>
