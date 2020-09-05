@@ -2,7 +2,7 @@ import React from "react";
 // import AppBar from "@material-ui/core/AppBar";
 // import Toolbar from "@material-ui/core/Toolbar";
 import { makeStyles } from "@material-ui/styles";
-import logo from "../../assets/logofjufju.svg";
+import logo from "../../assets/arizoniadark.svg";
 // import Tabs from "@material-ui/core/Tabs";
 // import Tab from "@material-ui/core/Tab";
 // import Button from "@material-ui/core/Button";
@@ -26,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 1300,
     margin: "auto",
     padding: "0px 50px",
+    [theme.breakpoints.down("md")]: {
+      padding: "0px 15px",
+    },
   },
   navbar: {
     display: "flex",
@@ -45,19 +48,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       display: "none",
     },
-  },
-  menuBtnContainer: {
-    display: "none",
-    outline: "none",
-    minHeight: 35,
-    width: "33%",
-    [theme.breakpoints.down("md")]: {
-      display: "flex",
-    },
-  },
-  menuBtn: {
-    color: "#f02a67",
-    fontSize: "2rem",
   },
   input: {
     minWidth: 200,
@@ -83,16 +73,43 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     height: "20px",
   },
-  sideIcon: {
+
+  menuBtnContainer: {
+    display: "none",
+    outline: "none",
+    minHeight: 35,
+    width: "33%",
+    [theme.breakpoints.down("md")]: {
+      display: "flex",
+      width: "auto",
+    },
+  },
+  menuBtn: {
+    color: "#f02a67",
+    fontSize: "2rem",
+  },
+
+  sideIconCart: {
     color: theme.palette.text.primary,
     height: "20px",
     marginLeft: "10px",
+  },
+  sideIconUser: {
+    color: theme.palette.text.primary,
+    height: "20px",
+    marginLeft: "10px",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
   currentCartValue: {
     color: theme.palette.text.primary,
     fontSize: "13px",
     fontWeight: 700,
     marginLeft: "10px",
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
   },
   currentCartItems: {
     backgroundColor: "#f02a67",
@@ -108,17 +125,31 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   logoContainer: {
-    height: "3.5rem",
     width: "33%",
     textAlign: "center",
+    [theme.breakpoints.down("md")]: {
+      width: "auto",
+    },
   },
   logo: {
     height: "4rem",
+    [theme.breakpoints.down("md")]: {
+      height: "3.5rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      height: "3rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      height: "2.4rem",
+    },
   },
   icons: {
     display: "flex",
     width: "33%",
     justifyContent: "flex-end",
+    [theme.breakpoints.down("md")]: {
+      width: "auto",
+    },
   },
   menuBar: {
     display: "flex",
@@ -174,12 +205,13 @@ const Header = () => {
               <img className={classes.logo} src={logo} alt="company logo" />
             </div>
             <div className={classes.icons}>
-              <UserIcon className={classes.sideIcon} />
+              <UserIcon className={classes.sideIconUser} />
               <div className={classes.currentCartValue}>0,00</div>
-              <CartIcon className={classes.sideIcon} />
+              <CartIcon className={classes.sideIconCart} />
               <div className={classes.currentCartItems}>2</div>
             </div>
           </div>
+
           <div className={classes.menuBar}>
             <ul className={classes.navigation}>
               <li className={classes.tab}>

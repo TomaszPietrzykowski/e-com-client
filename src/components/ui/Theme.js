@@ -28,8 +28,8 @@ export default createMuiTheme({
     values: {
       xxs: 0,
       xs: 360,
-      sm: 410,
-      md: 760,
+      sm: 400,
+      md: 600,
       lg: 990,
       xl: 1200,
     },
