@@ -1,17 +1,23 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
-const pink = "#fc1868";
+const pink = "rgba(235, 21, 96, 1)";
+const blue = "rgba(107, 213, 255, 1)";
+const white = "rgba(255, 255, 255, 1)";
+const violet = "rgba(122, 65, 156, 1)";
 
 export default createMuiTheme({
   palette: {
     common: {
       pink: `${pink}`,
+      blue: `${blue}`,
+      white: `${white}`,
+      violet: `${violet}`,
     },
     primary: {
       main: `${pink}`,
     },
     secondary: {
-      main: `rgba(255,255,255,1)`,
+      main: `${violet}`,
     },
   },
   typography: {

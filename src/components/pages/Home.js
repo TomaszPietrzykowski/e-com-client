@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 1300,
     margin: "auto",
     marginTop: 140,
+    marginBottom: "100vh",
     padding: "15px",
     [theme.breakpoints.down("md")]: {
       marginTop: 100,
@@ -42,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 13,
   },
   desktopIcon: {
-    color: "#f02a67",
+    color: theme.palette.primary.main,
     fontSize: 13,
     marginRight: "0.4rem",
   },
@@ -86,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 0,
     fontSize: "15px",
     fontFamily: "inherit",
-    border: "1px solid #f02a67",
+    border: `1px solid ${theme.palette.primary.main}`,
   },
   searchBtnMobile: {
     height: "45px",
@@ -97,7 +98,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     borderRadius: 0,
     border: "none",
-    backgroundColor: "#f02a67",
+    backgroundColor: theme.palette.primary.main,
     outline: "none",
     cursor: "pointer",
     [theme.breakpoints.down("sm")]: {

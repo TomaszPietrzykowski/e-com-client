@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 0,
     fontSize: "15px",
     fontFamily: "inherit",
-    border: "1px solid #f02a67",
+    border: `1px solid ${theme.palette.primary.main}`,
   },
   searchBtn: {
     display: "flex",
@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     borderRadius: 0,
     border: "none",
-    backgroundColor: "#f02a67",
+    backgroundColor: theme.palette.primary.main,
     outline: "none",
     cursor: "pointer",
   },
@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   menuBtn: {
-    color: "#f02a67",
+    color: theme.palette.primary.main,
     fontSize: "2rem",
   },
 
@@ -112,8 +112,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   currentCartItems: {
-    backgroundColor: "#f02a67",
-    color: theme.palette.secondary.main,
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.common.white,
     fontSize: "12px",
     fontWeight: 700,
     marginLeft: "10px",
