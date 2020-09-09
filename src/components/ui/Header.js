@@ -15,12 +15,13 @@ import MenuIcon from "@material-ui/icons/Menu";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: "white",
+    backgroundColor: theme.palette.common.white,
     width: "100%",
     fontFamily: "Open Sans, sans-serif",
     position: "fixed",
     top: 0,
     left: 0,
+    zIndex: 1200,
   },
   container: {
     maxWidth: 1300,
@@ -35,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   topBar: {
+    backgroundColor: theme.palette.common.white,
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",

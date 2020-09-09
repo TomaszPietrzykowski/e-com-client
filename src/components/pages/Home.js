@@ -1,12 +1,9 @@
 import React from "react";
-import { makeStyles } from "@material-ui/styles";
-import TruckIcon from "@material-ui/icons/LocalShipping";
-import CheckIcon from "@material-ui/icons/CheckRounded";
-import GiftIcon from "@material-ui/icons/Redeem";
-import ChatIcon from "@material-ui/icons/ChatBubble";
+import { makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 
 import Showcase from "../home/Showcase";
+import PromoLinks from "../home/PromoLinks";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -23,53 +20,53 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 
-  desktopLinks: {
-    display: "flex",
-    justifyContent: "center",
-    width: "100%",
-    padding: "10px 0px",
-    borderBottom: "1px solid #eee",
-    [theme.breakpoints.down("md")]: {
-      display: "none",
-    },
-  },
-  desktopTab: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "25%",
-    textAlign: "center",
-    fontFamily: "Open Sans",
-    fontSize: 13,
-  },
-  desktopIcon: {
-    color: theme.palette.primary.main,
-    fontSize: 13,
-    marginRight: "0.4rem",
-  },
-  mobileLinks: {
-    display: "none",
-    [theme.breakpoints.down("md")]: {
-      display: "flex",
-      justifyContent: "space-around",
-      width: "100%",
-      padding: "10px 0px",
-      borderBottom: "1px solid #eee",
-    },
-  },
-  mobileTab: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-    fontFamily: "Open Sans",
-    fontSize: 13,
-  },
-  mobileTabHide: {
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
-    },
-  },
+  // desktopLinks: {
+  //   display: "flex",
+  //   justifyContent: "center",
+  //   width: "100%",
+  //   padding: "10px 0px",
+  //   borderBottom: "1px solid #eee",
+  //   [theme.breakpoints.down("md")]: {
+  //     display: "none",
+  //   },
+  // },
+  // desktopTab: {
+  //   display: "flex",
+  //   justifyContent: "center",
+  //   alignItems: "center",
+  //   width: "25%",
+  //   textAlign: "center",
+  //   fontFamily: "Open Sans",
+  //   fontSize: 13,
+  // },
+  // desktopIcon: {
+  //   color: theme.palette.primary.main,
+  //   fontSize: 13,
+  //   marginRight: "0.4rem",
+  // },
+  // mobileLinks: {
+  //   display: "none",
+  //   [theme.breakpoints.down("md")]: {
+  //     display: "flex",
+  //     justifyContent: "space-around",
+  //     width: "100%",
+  //     padding: "10px 0px",
+  //     borderBottom: "1px solid #eee",
+  //   },
+  // },
+  // mobileTab: {
+  //   display: "flex",
+  //   justifyContent: "center",
+  //   alignItems: "center",
+  //   textAlign: "center",
+  //   fontFamily: "Open Sans",
+  //   fontSize: 13,
+  // },
+  // mobileTabHide: {
+  //   [theme.breakpoints.down("sm")]: {
+  //     display: "none",
+  //   },
+  // },
   searchMobile: {
     display: "none",
     outline: "none",
@@ -116,7 +113,8 @@ const Home = () => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <div className={classes.desktopLinks}>
+      <PromoLinks />
+      {/* <div className={classes.desktopLinks}>
         <div className={classes.desktopTab}>
           <TruckIcon className={classes.desktopIcon} />
           <div className={classes.desktopText}>Dostawa następnego dnia</div>
@@ -148,7 +146,7 @@ const Home = () => {
           <GiftIcon className={classes.desktopIcon} />
           <div className={classes.desktopText}>Upominek powyżej 80pln</div>
         </div>
-      </div>
+      </div> */}
 
       <form className={classes.searchMobile}>
         <input
