@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: "center",
     backgroundSize: "cover",
     borderRadius: 7,
-    marginBottom: "80vh",
     [theme.breakpoints.down("md")]: {},
   },
   containerMobile: {

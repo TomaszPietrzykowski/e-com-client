@@ -4,6 +4,7 @@ import SearchIcon from "@material-ui/icons/Search";
 
 import Showcase from "../home/Showcase";
 import PromoLinks from "../home/PromoLinks";
+import NewProducts from "../home/NewProducts";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -19,62 +20,18 @@ const useStyles = makeStyles((theme) => ({
       marginTop: 70,
     },
   },
-
-  // desktopLinks: {
-  //   display: "flex",
-  //   justifyContent: "center",
-  //   width: "100%",
-  //   padding: "10px 0px",
-  //   borderBottom: "1px solid #eee",
-  //   [theme.breakpoints.down("md")]: {
-  //     display: "none",
-  //   },
-  // },
-  // desktopTab: {
-  //   display: "flex",
-  //   justifyContent: "center",
-  //   alignItems: "center",
-  //   width: "25%",
-  //   textAlign: "center",
-  //   fontFamily: "Open Sans",
-  //   fontSize: 13,
-  // },
-  // desktopIcon: {
-  //   color: theme.palette.primary.main,
-  //   fontSize: 13,
-  //   marginRight: "0.4rem",
-  // },
-  // mobileLinks: {
-  //   display: "none",
-  //   [theme.breakpoints.down("md")]: {
-  //     display: "flex",
-  //     justifyContent: "space-around",
-  //     width: "100%",
-  //     padding: "10px 0px",
-  //     borderBottom: "1px solid #eee",
-  //   },
-  // },
-  // mobileTab: {
-  //   display: "flex",
-  //   justifyContent: "center",
-  //   alignItems: "center",
-  //   textAlign: "center",
-  //   fontFamily: "Open Sans",
-  //   fontSize: 13,
-  // },
-  // mobileTabHide: {
-  //   [theme.breakpoints.down("sm")]: {
-  //     display: "none",
-  //   },
-  // },
   searchMobile: {
     display: "none",
     outline: "none",
-    width: "100%",
+    width: "86%",
     paddingTop: "1rem",
+    margin: "auto",
     [theme.breakpoints.down("md")]: {
       display: "flex",
       justifyContent: "center",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
     },
   },
   inputMobile: {
@@ -114,40 +71,6 @@ const Home = () => {
   return (
     <div className={classes.container}>
       <PromoLinks />
-      {/* <div className={classes.desktopLinks}>
-        <div className={classes.desktopTab}>
-          <TruckIcon className={classes.desktopIcon} />
-          <div className={classes.desktopText}>Dostawa następnego dnia</div>
-        </div>
-        <div className={classes.desktopTab}>
-          <CheckIcon className={classes.desktopIcon} />
-          <div className={classes.desktopText}>Darmowa przesyłka od 100pln</div>
-        </div>
-        <div className={classes.desktopTab}>
-          <GiftIcon className={classes.desktopIcon} />
-          <div className={classes.desktopText}>Upominek powyżej 80pln</div>
-        </div>
-        <div className={classes.desktopTab}>
-          <ChatIcon className={classes.desktopIcon} />
-          <div className={classes.desktopText}>Bezpłatne porady experta</div>
-        </div>
-      </div>
-
-      <div className={classes.mobileLinks}>
-        <div className={classes.mobileTabHide}>
-          <div className={classes.mobileTab}>
-            <CheckIcon className={classes.desktopIcon} />
-            <div className={classes.desktopText}>
-              Darmowa przesyłka od 100pln
-            </div>
-          </div>
-        </div>
-        <div className={classes.mobileTab}>
-          <GiftIcon className={classes.desktopIcon} />
-          <div className={classes.desktopText}>Upominek powyżej 80pln</div>
-        </div>
-      </div> */}
-
       <form className={classes.searchMobile}>
         <input
           type="text"
@@ -158,8 +81,8 @@ const Home = () => {
           <SearchIcon className={classes.searchIconMobile} />
         </button>
       </form>
-
       <Showcase />
+      <NewProducts />
     </div>
   );
 };
