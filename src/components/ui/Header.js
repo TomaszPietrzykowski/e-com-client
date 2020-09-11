@@ -225,11 +225,7 @@ const Header = () => {
                 <ExpandIcon className={classes.expandIcon} />
               </li>
               <li className={classes.tab}>
-                <div>Make Up</div>
-                <ExpandIcon className={classes.expandIcon} />
-              </li>
-              <li className={classes.tab}>
-                <div>Akcesoria</div>
+                <div>Makijaż</div>
                 <ExpandIcon className={classes.expandIcon} />
               </li>
               <li className={classes.tab}>
@@ -237,7 +233,15 @@ const Header = () => {
                 <ExpandIcon className={classes.expandIcon} />
               </li>
               <li className={classes.tab}>
+                <div>Paznokcie</div>
+                <ExpandIcon className={classes.expandIcon} />
+              </li>
+              <li className={classes.tab}>
                 <div>Skóra</div>
+                <ExpandIcon className={classes.expandIcon} />
+              </li>
+              <li className={classes.tab}>
+                <div>Akcesoria</div>
                 <ExpandIcon className={classes.expandIcon} />
               </li>
               <li className={classes.tab}>
