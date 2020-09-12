@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: "center",
     backgroundSize: "cover",
     borderRadius: 7,
-    [theme.breakpoints.down("md")]: {},
   },
   containerMobile: {
     padding: "0px 15px",
@@ -25,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 7,
     marginBottom: "80vh",
     [theme.breakpoints.down("md")]: {
-      margin: "30px 0px",
+      margin: "30px 0px 20px 0px",
     },
   },
 }));

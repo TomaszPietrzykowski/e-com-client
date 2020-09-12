@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/styles";
 import Slider from "@farbenmeer/react-spring-slider";
 import { useMediaQuery } from "@material-ui/core";
+import products from "../db/productsDB";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -16,24 +17,27 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    marginBottom: "1rem",
   },
   productTab: {
+    minHeight: "150px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     border: "1px solid red",
     margin: ".3rem",
-
     flex: 1,
   },
   headerText: {
     padding: "15px",
-    width: "180px",
-    border: "1px solid red",
+    // border: "1px solid red",
     fontFamily: "Bree Serif",
-    fontSize: "18px",
+    fontSize: "1.5rem",
     textAlign: "center",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.2rem",
+    },
   },
   newProductsSlider: {
     display: "flex",
@@ -42,33 +46,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-
-// DB placeholder
-const products = [
-  { name: "Product 1" },
-  { name: "Product 2" },
-  { name: "Product 3" },
-  { name: "Product 4" },
-  { name: "Product 5" },
-  { name: "Product 6" },
-  { name: "Product 7" },
-  { name: "Product 8" },
-  { name: "Product 9" },
-  { name: "Product 10" },
-  { name: "Product 11" },
-  { name: "Product 12" },
-  { name: "Product 13" },
-  { name: "Product 14" },
-  { name: "Product 15" },
-  { name: "Product 16" },
-  { name: "Product 17" },
-  { name: "Product 18" },
-  { name: "Product 19" },
-  { name: "Product 20" },
-  { name: "Product 21" },
-  { name: "Product 22" },
-  { name: "Product 23" },
-];
 
 const ProductsSlider = ({ title }) => {
   const classes = useStyles();

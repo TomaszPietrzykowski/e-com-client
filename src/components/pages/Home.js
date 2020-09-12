@@ -5,6 +5,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import Showcase from "../home/Showcase";
 import PromoLinks from "../home/PromoLinks";
 import ProductsSlider from "../home/ProductsSlider";
+import Teasers from "../home/Teasers";
 // import LogoShowcase from "../ui/LogoShowcase";
 
 const useStyles = makeStyles((theme) => ({
@@ -83,7 +84,8 @@ const Home = () => {
         </button>
       </form>
       <Showcase />
-      <ProductsSlider title="Nowości" />
+      <Teasers />
+      <ProductsSlider title="Nowa dostawa" />
     </div>
     // <LogoShowcase />
   );
