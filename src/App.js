@@ -3,6 +3,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import theme from "./components/ui/Theme";
 import Header from "./components/ui/Header";
 import Home from "./components/pages/Home";
+import Newsletter from "./components/ui/Newsletter";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Fragment>
         <Header />
         <Home />
+        <Newsletter />
       </Fragment>
     </ThemeProvider>
   );

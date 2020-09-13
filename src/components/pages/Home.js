@@ -6,6 +6,7 @@ import Showcase from "../home/Showcase";
 import PromoLinks from "../home/PromoLinks";
 import ProductsSlider from "../home/ProductsSlider";
 import Teasers from "../home/Teasers";
+import Brands from "../home/Brands";
 // import LogoShowcase from "../ui/LogoShowcase";
 
 const useStyles = makeStyles((theme) => ({
@@ -13,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 1300,
     margin: "auto",
     marginTop: 140,
-    marginBottom: "100vh",
     padding: "15px",
     [theme.breakpoints.down("md")]: {
       marginTop: 100,
@@ -86,6 +86,8 @@ const Home = () => {
       <Showcase />
       <Teasers />
       <ProductsSlider title="Nowa dostawa" />
+      <ProductsSlider title="Promocje" />
+      <Brands />
     </div>
     // <LogoShowcase />
   );

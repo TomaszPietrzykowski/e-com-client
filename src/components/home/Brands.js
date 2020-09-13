@@ -1,8 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/styles";
-import Slider from "@farbenmeer/react-spring-slider";
-import { useMediaQuery } from "@material-ui/core";
-import products from "../db/productsDB";
+// import { useMediaQuery } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -14,14 +12,20 @@ const useStyles = makeStyles((theme) => ({
       padding: "0px",
     },
   },
-  sliderHeader: {
+
+  brandsHeader: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     marginBottom: "1rem",
   },
-  productTab: {
-    minHeight: "150px",
+  brandsContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+  },
+  brandTab: {
+    minWidth: "80px",
+    minHeight: "80px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -61,40 +65,26 @@ const useStyles = makeStyles((theme) => ({
         height: "1px",
         width: "50px",
       },
-      "&:before": { right: "-50px" },
-      "&:after": { left: "-50px" },
-    },
-  },
-  newProductsSlider: {
-    display: "flex",
-    "& > :first-child": {
-      height: "200px !important",
     },
   },
 }));
 
-const ProductsSlider = ({ title }) => {
+const Brands = ({ title }) => {
   const classes = useStyles();
-  const isTablet = useMediaQuery("(max-width: 990px)");
-  const isMobile = useMediaQuery("(max-width: 600px)");
-  const slides = isMobile ? 2 : isTablet ? 3 : 5;
+  //   const isTablet = useMediaQuery("(max-width: 990px)");
+  //   const isMobile = useMediaQuery("(max-width: 600px)");
+  //   const slides = isMobile ? 2 : isTablet ? 3 : 5;
 
   return (
     <div className={classes.container}>
-      <div className={classes.sliderHeader}>
-        <div className={classes.headerText}>{title}</div>
+      <div className={classes.brandsHeader}>
+        <div className={classes.headerText}>Marki</div>
       </div>
-      <div className={classes.newProductsSlider}>
-        <Slider auto={4000} slidesAtOnce={slides} activeIndex={0}>
-          {products.map((product) => (
-            <div className={classes.productTab} key={product.name}>
-              {product.name}
-            </div>
-          ))}
-        </Slider>
+      <div className={classes.brandsContainer}>
+        <div className={classes.brandTab}></div>
       </div>
     </div>
   );
 };
 
-export default ProductsSlider;
+export default Brands;
