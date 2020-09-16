@@ -77,6 +77,13 @@ const useStyles = makeStyles((theme) => ({
   socialIcon: {
     fontSize: "3rem",
     margin: "1rem",
+    cursor: "pointer",
+    "&:hover": {
+      color: theme.palette.common.blue,
+    },
+  },
+  anchor: {
+    color: "white",
   },
 }));
 
@@ -110,8 +117,22 @@ const Footer = () => {
         </div>
 
         <div className={classes.social}>
-          <FacebookIcon className={classes.socialIcon} />
-          <InstagramIcon className={classes.socialIcon} />
+          <a
+            className={classes.anchor}
+            href="http://www.facebook.com"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <FacebookIcon className={classes.socialIcon} />
+          </a>
+          <a
+            className={classes.anchor}
+            href="http://www.instagram.com"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <InstagramIcon className={classes.socialIcon} />
+          </a>
         </div>
       </div>
     </div>

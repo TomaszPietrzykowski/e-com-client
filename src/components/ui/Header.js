@@ -11,7 +11,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import UserIcon from "@material-ui/icons/Person";
 import CartIcon from "@material-ui/icons/ShoppingCartOutlined";
 import ExpandIcon from "@material-ui/icons/ExpandMore";
-import MenuIcon from "@material-ui/icons/Menu";
+import MenuIcon from "@material-ui/icons/MenuRounded";
 
 const useStyles = makeStyles((theme) => ({
   root: {
