@@ -1,6 +1,13 @@
 import React from "react";
 import { makeStyles } from "@material-ui/styles";
 // import { useMediaQuery } from "@material-ui/core";
+import b1 from "../../assets/brand01.svg";
+import b2 from "../../assets/brand02.svg";
+import b3 from "../../assets/brand03.svg";
+import b4 from "../../assets/brand04.svg";
+import b5 from "../../assets/brand05.svg";
+import b6 from "../../assets/brand06.svg";
+import b7 from "../../assets/brand07.svg";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -8,8 +15,15 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     padding: "0px 15px",
     marginTop: "6rem",
+    marginBottom: "4rem",
     [theme.breakpoints.down("md")]: {
       padding: "0px",
+      marginTop: "4rem",
+      marginBottom: "2rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "2rem",
+      marginBottom: "1rem",
     },
   },
 
@@ -17,22 +31,29 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: "1rem",
+    marginBottom: "3rem",
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: ".5rem",
+    },
   },
   brandsContainer: {
     display: "flex",
+    justifyContent: "space-around",
+    alignItems: "center",
     flexWrap: "wrap",
   },
   brandTab: {
-    minWidth: "80px",
-    minHeight: "80px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    border: "1px solid red",
-    margin: ".3rem",
-    flex: 1,
+    // border: "1px solid red",
+    margin: "1rem",
+  },
+  brandImg: {
+    width: "12vmin",
+    minWidth: 70,
+    opacity: 0.85,
   },
   headerText: {
     padding: "15px",
@@ -69,6 +90,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const brandsLogos = [b1, b2, b3, b4, b5, b6, b7];
+
 const Brands = ({ title }) => {
   const classes = useStyles();
   //   const isTablet = useMediaQuery("(max-width: 990px)");
@@ -81,7 +104,11 @@ const Brands = ({ title }) => {
         <div className={classes.headerText}>Marki</div>
       </div>
       <div className={classes.brandsContainer}>
-        <div className={classes.brandTab}></div>
+        {brandsLogos.map((logo) => (
+          <div key={logo} className={classes.brandTab}>
+            <img src={logo} alt="producers logo" className={classes.brandImg} />
+          </div>
+        ))}
       </div>
     </div>
   );

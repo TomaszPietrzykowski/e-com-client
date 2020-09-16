@@ -7,7 +7,6 @@ import PromoLinks from "../home/PromoLinks";
 import ProductsSlider from "../home/ProductsSlider";
 import Teasers from "../home/Teasers";
 import Brands from "../home/Brands";
-// import LogoShowcase from "../ui/LogoShowcase";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -89,7 +88,6 @@ const Home = () => {
       <ProductsSlider title="Promocje" />
       <Brands />
     </div>
-    // <LogoShowcase />
   );
 };
 

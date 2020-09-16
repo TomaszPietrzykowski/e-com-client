@@ -70,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "3rem",
     [theme.breakpoints.down("md")]: {
       marginRight: 0,
-      marginTop: "2rem",
+      marginTop: "1.5rem",
       width: "100%",
       justifyContent: "center",
       height: "35px",

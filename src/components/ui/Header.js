@@ -61,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
     border: `1px solid ${theme.palette.primary.main}`,
   },
   searchBtn: {
+    width: "35px",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
