@@ -1,9 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/styles";
 import TruckIcon from "@material-ui/icons/LocalShipping";
-import CheckIcon from "@material-ui/icons/CheckRounded";
+import TimerIcon from "@material-ui/icons/Timer";
 import GiftIcon from "@material-ui/icons/Redeem";
-import ChatIcon from "@material-ui/icons/ChatBubble";
+import SecurityIcon from "@material-ui/icons/Security";
 import Slider from "@farbenmeer/react-spring-slider";
 import { useMediaQuery } from "@material-ui/core";
 
@@ -79,27 +79,27 @@ const PromoLinks = () => {
           <div className={classes.mobileLinks}>
             <Slider auto={4000} slidesAtOnce={1}>
               <div className={classes.mobileTab}>
-                <TruckIcon className={classes.desktopIcon} />
+                <TimerIcon className={classes.desktopIcon} />
                 <div className={classes.desktopText}>
-                  Dostawa następnego dnia
+                  Dostawa w ciągu 2 dni roboczych
                 </div>
               </div>
               <div className={classes.mobileTab}>
-                <CheckIcon className={classes.desktopIcon} />
+                <TruckIcon className={classes.desktopIcon} />
                 <div className={classes.desktopText}>
-                  Darmowa przesyłka od 100pln
+                  Darmowa przesyłka od 129pln
                 </div>
               </div>
               <div className={classes.mobileTab}>
                 <GiftIcon className={classes.desktopIcon} />
                 <div className={classes.desktopText}>
-                  Upominek powyżej 80pln
+                  Upominek powyżej 99pln
                 </div>
               </div>
               <div className={classes.mobileTab}>
-                <ChatIcon className={classes.desktopIcon} />
+                <SecurityIcon className={classes.desktopIcon} />
                 <div className={classes.desktopText}>
-                  Bezpłatne porady experta
+                  Bezpieczne zakupy przez SSL
                 </div>
               </div>
             </Slider>
@@ -110,13 +110,41 @@ const PromoLinks = () => {
             <Slider auto={4000} slidesAtOnce={1} reset>
               <div className={classes.tabletTab}>
                 <div className={classes.mobileTab}>
-                  <TruckIcon className={classes.desktopIcon} />
+                  <TimerIcon className={classes.desktopIcon} />
                   <div className={classes.desktopText}>
-                    Dostawa następnego dnia
+                    Dostawa w ciągu 2 dni roboczych
                   </div>
                 </div>
                 <div className={classes.mobileTab}>
-                  <CheckIcon className={classes.desktopIcon} />
+                  <TruckIcon className={classes.desktopIcon} />
+                  <div className={classes.desktopText}>
+                    Darmowa przesyłka od 129pln
+                  </div>
+                </div>
+              </div>
+              <div className={classes.tabletTab}>
+                <div className={classes.mobileTab}>
+                  <GiftIcon className={classes.desktopIcon} />
+                  <div className={classes.desktopText}>
+                    Upominek powyżej 99pln
+                  </div>
+                </div>
+                <div className={classes.mobileTab}>
+                  <SecurityIcon className={classes.desktopIcon} />
+                  <div className={classes.desktopText}>
+                    Bezpieczne zakupy przez SSL
+                  </div>
+                </div>
+              </div>
+              <div className={classes.tabletTab}>
+                <div className={classes.mobileTab}>
+                  <TimerIcon className={classes.desktopIcon} />
+                  <div className={classes.desktopText}>
+                    Dostawa w ciągu 2 dni roboczych
+                  </div>
+                </div>
+                <div className={classes.mobileTab}>
+                  <TruckIcon className={classes.desktopIcon} />
                   <div className={classes.desktopText}>
                     Darmowa przesyłka od 100pln
                   </div>
@@ -126,41 +154,13 @@ const PromoLinks = () => {
                 <div className={classes.mobileTab}>
                   <GiftIcon className={classes.desktopIcon} />
                   <div className={classes.desktopText}>
-                    Upominek powyżej 80pln
+                    Upominek powyżej 99pln
                   </div>
                 </div>
                 <div className={classes.mobileTab}>
-                  <ChatIcon className={classes.desktopIcon} />
+                  <SecurityIcon className={classes.desktopIcon} />
                   <div className={classes.desktopText}>
-                    Bezpłatne porady experta
-                  </div>
-                </div>
-              </div>
-              <div className={classes.tabletTab}>
-                <div className={classes.mobileTab}>
-                  <TruckIcon className={classes.desktopIcon} />
-                  <div className={classes.desktopText}>
-                    Dostawa następnego dnia
-                  </div>
-                </div>
-                <div className={classes.mobileTab}>
-                  <CheckIcon className={classes.desktopIcon} />
-                  <div className={classes.desktopText}>
-                    Darmowa przesyłka od 100pln
-                  </div>
-                </div>
-              </div>
-              <div className={classes.tabletTab}>
-                <div className={classes.mobileTab}>
-                  <GiftIcon className={classes.desktopIcon} />
-                  <div className={classes.desktopText}>
-                    Upominek powyżej 80pln
-                  </div>
-                </div>
-                <div className={classes.mobileTab}>
-                  <ChatIcon className={classes.desktopIcon} />
-                  <div className={classes.desktopText}>
-                    Bezpłatne porady experta
+                    Bezpieczne zakupy przez SSL
                   </div>
                 </div>
               </div>
@@ -171,22 +171,26 @@ const PromoLinks = () => {
         // -------------------------------------------------------------------   desktop styles V V V
         <div className={classes.desktopLinks}>
           <div className={classes.desktopTab}>
-            <TruckIcon className={classes.desktopIcon} />
-            <div className={classes.desktopText}>Dostawa następnego dnia</div>
+            <TimerIcon className={classes.desktopIcon} />
+            <div className={classes.desktopText}>
+              Dostawa w ciągu 2 dni roboczych
+            </div>
           </div>
           <div className={classes.desktopTab}>
-            <CheckIcon className={classes.desktopIcon} />
+            <TruckIcon className={classes.desktopIcon} />
             <div className={classes.desktopText}>
-              Darmowa przesyłka od 100pln
+              Darmowa przesyłka od 129pln
             </div>
           </div>
           <div className={classes.desktopTab}>
             <GiftIcon className={classes.desktopIcon} />
-            <div className={classes.desktopText}>Upominek powyżej 80pln</div>
+            <div className={classes.desktopText}>Upominek powyżej 99pln</div>
           </div>
           <div className={classes.desktopTab}>
-            <ChatIcon className={classes.desktopIcon} />
-            <div className={classes.desktopText}>Bezpłatne porady experta</div>
+            <SecurityIcon className={classes.desktopIcon} />
+            <div className={classes.desktopText}>
+              Bezpieczne zakupy przez SSL
+            </div>
           </div>
         </div>
       )}
