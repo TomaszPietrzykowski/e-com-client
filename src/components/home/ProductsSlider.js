@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/styles";
 import Slider from "@farbenmeer/react-spring-slider";
 import { useMediaQuery } from "@material-ui/core";
 import products from "../db/productsDB";
+import ProductTab from "../product/ProductTab";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -21,12 +22,12 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "1rem",
   },
   productTab: {
-    minHeight: "150px",
+    minHeight: "350px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    // border: "1px solid red",
+    border: "1px solid red",
     margin: ".3rem",
     flex: 1,
   },
@@ -68,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
   newProductsSlider: {
     display: "flex",
     "& > :first-child": {
-      height: "200px !important",
+      height: "450px !important",
     },
   },
 }));
@@ -87,9 +88,17 @@ const ProductsSlider = ({ title }) => {
       <div className={classes.newProductsSlider}>
         <Slider auto={4000} slidesAtOnce={slides} activeIndex={0}>
           {products.map((product) => (
-            <div className={classes.productTab} key={product.name}>
-              {product.name}
-            </div>
+            <ProductTab
+              key={product.name}
+              className={classes.productTab}
+              img={product.img}
+              title={product.name}
+              description={product.shortDescription}
+              price={product.price}
+            />
+            // <div className={classes.productTab} key={product.name}>
+            //   {product.name}
+            // </div>
           ))}
         </Slider>
       </div>
