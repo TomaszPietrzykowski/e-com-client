@@ -84,8 +84,8 @@ const Home = () => {
       </form>
       <Showcase />
       <Teasers />
-      <ProductsSlider title="Nowa dostawa" />
-      <ProductsSlider title="Promocje" />
+      <ProductsSlider title="Nowa dostawa" endpoint={"new"} />
+      <ProductsSlider title="Promocje" endpoint={"promo"} />
       <Brands />
     </div>
   );

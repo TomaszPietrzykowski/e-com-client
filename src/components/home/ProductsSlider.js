@@ -2,7 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/styles";
 // import Slider from "@farbenmeer/react-spring-slider";
 import { useMediaQuery } from "@material-ui/core";
-import products from "../db/productsDB";
+import products1 from "../db/productsDB";
+import products2 from "../db/productsDB2";
 import CustomSlider from "./CustomSlider";
 
 const useStyles = makeStyles((theme) => ({
@@ -57,12 +58,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ProductsSlider = ({ title }) => {
+const ProductsSlider = ({ title, endpoint }) => {
   const classes = useStyles();
   const isTablet = useMediaQuery("(max-width: 990px)");
   const isMobile = useMediaQuery("(max-width: 600px)");
   const slides = isMobile ? 2 : isTablet ? 3 : 5;
-
+  const products = endpoint === "new" ? products1 : products2;
   return (
     <div className={classes.container}>
       <div className={classes.sliderHeader}>
@@ -70,7 +71,7 @@ const ProductsSlider = ({ title }) => {
       </div>
       <div className={classes.productsSlider}>
         <CustomSlider
-          timeout={5500}
+          timeout={6500}
           slidesAtOnce={slides}
           products={products}
         />

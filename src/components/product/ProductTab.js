@@ -5,11 +5,12 @@ import HeartIcon from "@material-ui/icons/FavoriteBorder";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
+    display: "inline-flex",
     flexDirection: "column",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     alignItems: "center",
-    // margin: "3vmin",
+    cursor: "pointer",
+    // border: "1px solid green",
     "&:hover $buttonsContainer": {
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.common.white,
@@ -18,11 +19,17 @@ const useStyles = makeStyles((theme) => ({
   },
   imageContainer: {
     height: "40%",
+    // border: "1px solid red",
   },
   img: {
-    width: "100%",
-    height: "100%",
-    padding: ".5rem",
+    maxHeight: "100%",
+    maxWidth: "100%",
+    // padding: ".5rem",
+    objectFit: "scale-down",
+    // border: "1px solid red",
+    [theme.breakpoints.down("md")]: {
+      maxWidth: "100%",
+    },
   },
   title: {
     fontFamily: "Open Sans",
@@ -30,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     padding: ".5rem",
     color: theme.palette.text.primary,
+    // border: "1px solid red",
   },
   description: {
     fontFamily: "Bree Serif",
@@ -37,21 +45,28 @@ const useStyles = makeStyles((theme) => ({
     padding: ".5rem",
     textAlign: "center",
     color: theme.palette.text.secondary,
+    // border: "1px solid red",
   },
   price: {
     padding: "1rem 0",
     fontFamily: "Open Sans",
     fontSize: "1rem",
     fontWeight: "bold",
+    // border: "1px solid red",
   },
   buttonsContainer: {
     display: "flex",
     width: "90%",
-    margin: "auto",
+    margin: "1rem auto",
     cursor: "pointer",
     color: theme.palette.common.white,
     transition: "all .15s",
     transform: "scale(0,0)",
+    // border: "1px solid red",
+    [theme.breakpoints.down("md")]: {
+      transform: "scale(1,1)",
+      backgroundColor: theme.palette.primary.main,
+    },
   },
   cartBtn: {
     flex: 4,
@@ -64,11 +79,21 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: theme.palette.primary.dark,
     },
+    [theme.breakpoints.down("md")]: {
+      fontSize: ".85rem",
+      flex: 1,
+      padding: ".3rem",
+    },
   },
   cartIcon: {
     fontSize: "1.6rem",
     marginRight: ".5rem",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "1.2rem",
+      margin: 0,
+    },
   },
+
   wishlistBtn: {
     flex: 1,
     display: "flex",
@@ -76,6 +101,15 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     "&:hover": {
       backgroundColor: theme.palette.primary.dark,
+    },
+    [theme.breakpoints.down("md")]: {
+      fontSize: "1.2rem",
+      margin: 0,
+    },
+  },
+  hide: {
+    [theme.breakpoints.down("md")]: {
+      display: "none",
     },
   },
 }));
@@ -110,10 +144,12 @@ const ProductTab = ({
       <div className={classes.buttonsContainer}>
         <div className={classes.cartBtn}>
           <CartIcon className={classes.cartIcon} />
-          <div>Do koszyka</div>
+          <div>
+            <span className={classes.hide}>Do koszyka</span>
+          </div>
         </div>
         <div className={classes.wishlistBtn}>
-          <HeartIcon />
+          <HeartIcon className={classes.cartIcon} />
         </div>
       </div>
     </div>
