@@ -10,9 +10,9 @@ const useStyles = makeStyles((theme) => ({
   container: {
     maxWidth: 1300,
     margin: "50px",
+    marginBottom: "6rem",
     display: "flex",
     justifyContent: "space-between",
-    // border: "1px solid blue",
     [theme.breakpoints.down("md")]: {
       flexDirection: "column",
     },
@@ -23,8 +23,6 @@ const useStyles = makeStyles((theme) => ({
   },
   teaser: {
     minHeight: 280,
-    // border: "1px solid green",
-    // backgroundImage: `url(${teaser1})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
     width: "32%",
@@ -34,24 +32,6 @@ const useStyles = makeStyles((theme) => ({
       margin: "20px 0px",
     },
   },
-  //   teaser2: {
-  //     minHeight: 300,
-  //     border: "1px solid green",
-  //     backgroundImage: `url(${teaser1})`,
-  //     backgroundPosition: "center",
-  //     backgroundSize: "100% 100%",
-  //     width: "30%",
-  //     borderRadius: 7,
-  //   },
-  //   teaser3: {
-  //     minHeight: 300,
-  //     border: "1px solid green",
-  //     backgroundImage: `url(${teaser1})`,
-  //     backgroundPosition: "center",
-  //     backgroundSize: "100% 100%",
-  //     width: "30%",
-  //     borderRadius: 7,
-  //   },
 }));
 
 const Teasers = () => {
