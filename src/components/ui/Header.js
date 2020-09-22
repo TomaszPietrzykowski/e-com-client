@@ -176,6 +176,46 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     padding: "15px 20px",
     cursor: "pointer",
+    // border: "1px solid red",
+    position: "relative",
+    "&:hover $dropdown": {
+      display: "block",
+    },
+  },
+  dropdown: {
+    position: "absolute",
+    display: "none",
+    // border: "1px solid blue",
+    backgroundColor: theme.palette.common.white,
+    top: "100%",
+    left: 0,
+    boxShadow: `0px 2px 3px ${theme.palette.common.pinkShadow}`,
+  },
+  submenu: {
+    listStyle: "none",
+    padding: "1rem",
+    display: "flex",
+    flexDirection: "column",
+    marginRight: "2rem",
+  },
+  submenuItem: {
+    display: "block",
+    fontFamily: "Open Sans",
+    fontSize: ".85rem",
+    padding: ".6rem",
+    "&:hover": {
+      color: theme.palette.primary.dark,
+    },
+  },
+  submenuItemHead: {
+    display: "block",
+    fontFamily: "Bree Serif",
+    fontSize: "1rem",
+    padding: ".6rem",
+    marginTop: ".5rem",
+  },
+  submenuFlex: {
+    display: "flex",
   },
   expandIcon: {
     color: theme.palette.text.secondary,
@@ -224,27 +264,157 @@ const Header = () => {
               <li className={classes.tab}>
                 <div>Promocje</div>
                 <ExpandIcon className={classes.expandIcon} />
+                <div className={classes.dropdown}>
+                  <ul className={classes.submenu}>
+                    <li className={classes.submenuItem}>Promocje</li>
+                    <li className={classes.submenuItem}>Wyprzedaże</li>
+                  </ul>
+                </div>
               </li>
+
               <li className={classes.tab}>
                 <div>Makijaż</div>
                 <ExpandIcon className={classes.expandIcon} />
+                <div className={classes.dropdown}>
+                  <div className={classes.submenuFlex}>
+                    <ul className={classes.submenu}>
+                      <li className={classes.submenuItemHead}>Twarz</li>
+                      <li className={classes.submenuItem}>
+                        Pudry,&nbsp;róże,&nbsp;bronzery
+                      </li>
+                      <li className={classes.submenuItem}>Korektory</li>
+                      <li className={classes.submenuItem}>Podkłady</li>
+                      <li className={classes.submenuItem}>Glitters</li>
+                      <li className={classes.submenuItem}>Rozświetlacze</li>
+                      <li className={classes.submenuItem}>
+                        Bazy&nbsp;pod&nbsp;makijaż&nbsp;i&nbsp;primer
+                      </li>
+                      <li className={classes.submenuItem}>Kremy BB i CC</li>
+                    </ul>
+
+                    <ul className={classes.submenu}>
+                      <li className={classes.submenuItemHead}>Usta</li>
+                      <li className={classes.submenuItem}>
+                        Kredki&nbsp;do&nbsp;malowania
+                      </li>
+                      <li className={classes.submenuItem}>Błyszczyki</li>
+                      <li className={classes.submenuItem}>Szminki</li>
+                      <li className={classes.submenuItem}>Konturówki</li>
+                      <li className={classes.submenuItem}>
+                        Balsamy&nbsp;do&nbsp;ust
+                      </li>
+                    </ul>
+
+                    <ul className={classes.submenu}>
+                      <li className={classes.submenuItemHead}>Oczy</li>
+                      <li className={classes.submenuItem}>
+                        Bazy&nbsp;pod&nbsp;cienie
+                      </li>
+                      <li className={classes.submenuItem}>
+                        Cienie&nbsp;do&nbsp;powiek
+                      </li>
+                      <li className={classes.submenuItem}>
+                        Tusze&nbsp;do&nbsp;rzęs
+                      </li>
+                      <li className={classes.submenuItem}>Eyeliner</li>
+                      <li className={classes.submenuItem}>
+                        Kredki&nbsp;i&nbsp;cienie&nbsp;do&nbsp;brwi
+                      </li>
+                      <li className={classes.submenuItem}>
+                        Kredki&nbsp;do&nbsp;oczu
+                      </li>
+                      <li className={classes.submenuItem}>
+                        Paletki&nbsp;cieni
+                      </li>
+                      <li className={classes.submenuItem}>Henna</li>
+                      <li className={classes.submenuItem}>
+                        Sztuczne&nbsp;rzęsy
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </li>
+
               <li className={classes.tab}>
                 <div>Włosy</div>
                 <ExpandIcon className={classes.expandIcon} />
+                <div className={classes.dropdown}>
+                  <ul className={classes.submenu}>
+                    <li className={classes.submenuItem}>Szampony</li>
+                    <li className={classes.submenuItem}>Odżywki</li>
+                    <li className={classes.submenuItem}>Maski</li>
+                    <li className={classes.submenuItem}>
+                      Olejki&nbsp;i&nbsp;serum
+                    </li>
+                  </ul>
+                </div>
               </li>
+
               <li className={classes.tab}>
                 <div>Paznokcie</div>
                 <ExpandIcon className={classes.expandIcon} />
+                <div className={classes.dropdown}>
+                  <ul className={classes.submenu}>
+                    <li className={classes.submenuItem}>Lakiery</li>
+                    <li className={classes.submenuItem}>
+                      Odżywki&nbsp;i&nbsp;utwardzacze
+                    </li>
+                    <li className={classes.submenuItem}>Stylizacja</li>
+                  </ul>
+                </div>
               </li>
+
               <li className={classes.tab}>
                 <div>Skóra</div>
                 <ExpandIcon className={classes.expandIcon} />
+                <div className={classes.dropdown}>
+                  <ul className={classes.submenu}>
+                    <li className={classes.submenuItem}>
+                      Kremy&nbsp;do&nbsp;twarzy
+                    </li>
+                    <li className={classes.submenuItem}>
+                      Produkty&nbsp;do&nbsp;mycia&nbsp;twarzy
+                    </li>
+                    <li className={classes.submenuItem}>
+                      Balsamy&nbsp;i&nbsp;olejki&nbsp;do&nbsp;ciała
+                    </li>
+                    <li className={classes.submenuItem}>
+                      Toniki&nbsp;i&nbsp;mgielki&nbsp;do&nbsp;ciała
+                    </li>
+                    <li className={classes.submenuItem}>
+                      Pielęgnacja&nbsp;dłoni
+                    </li>
+                    <li className={classes.submenuItem}>
+                      Pielęgnacja&nbsp;stóp
+                    </li>
+                  </ul>
+                </div>
               </li>
+
               <li className={classes.tab}>
                 <div>Akcesoria</div>
                 <ExpandIcon className={classes.expandIcon} />
+                <div className={classes.dropdown}>
+                  <ul className={classes.submenu}>
+                    <li className={classes.submenuItem}>
+                      Pędzle&nbsp;do&nbsp;makijażu
+                    </li>
+                    <li className={classes.submenuItem}>
+                      Pędzle&nbsp;do&nbsp;malowania&nbsp;ust
+                    </li>
+                    <li className={classes.submenuItem}>
+                      Eyeliner&nbsp;pędzle
+                    </li>
+                    <li className={classes.submenuItem}>
+                      Pędzle&nbsp;-&nbsp;zestawy
+                    </li>
+                    <li className={classes.submenuItem}>Pincety</li>
+                    <li className={classes.submenuItem}>Strugaczki</li>
+                    <li className={classes.submenuItem}>Lusterka</li>
+                  </ul>
+                </div>
               </li>
+
               <li className={classes.tab}>
                 <div>Marki</div>
                 <ExpandIcon className={classes.expandIcon} />

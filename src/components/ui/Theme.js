@@ -1,6 +1,7 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
 const pink = "rgba(235, 21, 96, 1)";
+const pinkShadow = "rgba(235, 21, 96, .3)";
 const lightPink = "rgba(251, 208, 222, 1)";
 const blue = "rgba(107, 213, 255, 1)";
 const white = "rgba(255, 255, 255, 1)";
@@ -10,6 +11,7 @@ export default createMuiTheme({
   palette: {
     common: {
       pink: `${pink}`,
+      pinkShadow: `${pinkShadow}`,
       lightPink: `${lightPink}`,
       blue: `${blue}`,
       white: `${white}`,
