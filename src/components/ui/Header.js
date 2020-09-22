@@ -1,17 +1,15 @@
-import React from "react";
-// import AppBar from "@material-ui/core/AppBar";
-// import Toolbar from "@material-ui/core/Toolbar";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/styles";
 import logo from "../../assets/logopink.svg";
-// import Tabs from "@material-ui/core/Tabs";
-// import Tab from "@material-ui/core/Tab";
-// import Button from "@material-ui/core/Button";
 // import { Link } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import UserIcon from "@material-ui/icons/Person";
 import CartIcon from "@material-ui/icons/ShoppingCartOutlined";
 import ExpandIcon from "@material-ui/icons/ExpandMore";
+import RightArrowIcon from "@material-ui/icons/ArrowForwardIos";
 import MenuIcon from "@material-ui/icons/MenuRounded";
+import CloseIcon from "@material-ui/icons/Close";
+import Divider from "@material-ui/core/Divider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -222,16 +220,58 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.85rem",
     margin: "3px 0px 0px 5px",
   },
+  drawer: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    backgroundColor: theme.palette.common.white,
+    height: "100%",
+    width: "100%",
+  },
+  drawerNav: {
+    display: "flex",
+    justifyContent: "flex-end",
+    padding: "1rem",
+  },
+  drawerItem: {
+    display: "flex",
+    width: "100%",
+    justifyContent: "space-between",
+    padding: "1rem",
+  },
+  drawerIconContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  drawerIcon: {
+    color: theme.palette.primary.main,
+    fontSize: "1rem",
+  },
+  closeIconContainer: {
+    padding: ".5rem",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  closeIcon: {
+    fontSize: "1.4rem",
+    color: theme.palette.primary.main,
+  },
 }));
 
 const Header = () => {
   const classes = useStyles();
+  const [openDrawer, setOpenDrawer] = useState(false);
   return (
     <div className={classes.root}>
       <div className={classes.container}>
         <div className={classes.navbar}>
           <div className={classes.topBar}>
-            <div className={classes.menuBtnContainer}>
+            <div
+              className={classes.menuBtnContainer}
+              onClick={() => setOpenDrawer(!openDrawer)}
+            >
               <MenuIcon className={classes.menuBtn} />
             </div>
             <form className={classes.search}>
@@ -254,6 +294,69 @@ const Header = () => {
               <div className={classes.currentCartItems}>2</div>
             </div>
           </div>
+          {openDrawer && (
+            <ul className={classes.drawer}>
+              <li className={classes.drawerNav}>
+                <div
+                  className={classes.closeIconContainer}
+                  onClick={() => setOpenDrawer(false)}
+                >
+                  <CloseIcon className={classes.closeIcon} />
+                </div>
+              </li>
+              <Divider />
+              <li className={classes.drawerItem}>
+                <div className={classes.drawerText}>Nowości</div>
+              </li>
+              <Divider />
+              <li className={classes.drawerItem}>
+                <div className={classes.drawerText}>Promocje</div>
+                <div className={classes.drawerIconContainer}>
+                  <RightArrowIcon className={classes.drawerIcon} />
+                </div>
+              </li>
+              <Divider />
+              <li className={classes.drawerItem}>
+                <div className={classes.drawerText}>Makijaż</div>
+                <div className={classes.drawerIconContainer}>
+                  <RightArrowIcon className={classes.drawerIcon} />
+                </div>
+              </li>
+              <Divider />
+              <li className={classes.drawerItem}>
+                <div className={classes.drawerText}>Włosy</div>
+                <div className={classes.drawerIconContainer}>
+                  <RightArrowIcon className={classes.drawerIcon} />
+                </div>
+              </li>
+              <Divider />
+              <li className={classes.drawerItem}>
+                <div className={classes.drawerText}>Paznokcie</div>
+                <div className={classes.drawerIconContainer}>
+                  <RightArrowIcon className={classes.drawerIcon} />
+                </div>
+              </li>
+              <Divider />
+              <li className={classes.drawerItem}>
+                <div className={classes.drawerText}>Skóra</div>
+                <div className={classes.drawerIconContainer}>
+                  <RightArrowIcon className={classes.drawerIcon} />
+                </div>
+              </li>
+              <Divider />
+              <li className={classes.drawerItem}>
+                <div className={classes.drawerText}>Akcesoria</div>
+                <div className={classes.drawerIconContainer}>
+                  <RightArrowIcon className={classes.drawerIcon} />
+                </div>
+              </li>
+              <Divider />
+              <li className={classes.drawerItem}>
+                <div className={classes.drawerText}>Marki</div>
+              </li>
+              <Divider />
+            </ul>
+          )}
 
           <div className={classes.menuBar}>
             <ul className={classes.navigation}>
