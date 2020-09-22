@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { ThemeProvider } from "@material-ui/styles";
 import theme from "./components/ui/Theme";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -12,11 +12,12 @@ import BottomNavMargin from "./components/ui/BottomNavMargin";
 
 function App() {
   const isMobile = useMediaQuery("(max-width:600px)");
+  const [openDrawer, setOpenDrawer] = useState(false);
 
   return (
     <ThemeProvider theme={theme}>
       <Fragment>
-        <Header />
+        <Header openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
         <Home />
         <Newsletter />
         <Footer />
@@ -24,7 +25,7 @@ function App() {
         {isMobile && (
           <Fragment>
             <BottomNavMargin />
-            <BottomNav />
+            <BottomNav openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
           </Fragment>
         )}
       </Fragment>

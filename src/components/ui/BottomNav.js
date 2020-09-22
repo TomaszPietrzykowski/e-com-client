@@ -38,13 +38,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const BottomNav = () => {
+const BottomNav = ({ openDrawer, setOpenDrawer }) => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <div className={classes.container}>
-        <div className={classes.tab}>
+        <div className={classes.tab} onClick={() => setOpenDrawer(!openDrawer)}>
           <MenuIcon className={classes.icon} />
           <div className={classes.label}>Menu</div>
         </div>

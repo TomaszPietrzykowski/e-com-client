@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/styles";
 import logo from "../../assets/logopink.svg";
 // import { Link } from "react-router-dom";
@@ -227,6 +227,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.common.white,
     height: "100%",
     width: "100%",
+    zIndex: 10,
   },
   drawerNav: {
     display: "flex",
@@ -260,9 +261,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Header = () => {
+const Header = ({ openDrawer, setOpenDrawer }) => {
   const classes = useStyles();
-  const [openDrawer, setOpenDrawer] = useState(false);
+
   return (
     <div className={classes.root}>
       <div className={classes.container}>
@@ -305,53 +306,77 @@ const Header = () => {
                 </div>
               </li>
               <Divider />
-              <li className={classes.drawerItem}>
+              <li
+                className={classes.drawerItem}
+                onClick={() => setOpenDrawer(false)}
+              >
                 <div className={classes.drawerText}>Nowości</div>
               </li>
               <Divider />
-              <li className={classes.drawerItem}>
+              <li
+                className={classes.drawerItem}
+                onClick={() => setOpenDrawer(false)}
+              >
                 <div className={classes.drawerText}>Promocje</div>
                 <div className={classes.drawerIconContainer}>
                   <RightArrowIcon className={classes.drawerIcon} />
                 </div>
               </li>
               <Divider />
-              <li className={classes.drawerItem}>
+              <li
+                className={classes.drawerItem}
+                onClick={() => setOpenDrawer(false)}
+              >
                 <div className={classes.drawerText}>Makijaż</div>
                 <div className={classes.drawerIconContainer}>
                   <RightArrowIcon className={classes.drawerIcon} />
                 </div>
               </li>
               <Divider />
-              <li className={classes.drawerItem}>
+              <li
+                className={classes.drawerItem}
+                onClick={() => setOpenDrawer(false)}
+              >
                 <div className={classes.drawerText}>Włosy</div>
                 <div className={classes.drawerIconContainer}>
                   <RightArrowIcon className={classes.drawerIcon} />
                 </div>
               </li>
               <Divider />
-              <li className={classes.drawerItem}>
+              <li
+                className={classes.drawerItem}
+                onClick={() => setOpenDrawer(false)}
+              >
                 <div className={classes.drawerText}>Paznokcie</div>
                 <div className={classes.drawerIconContainer}>
                   <RightArrowIcon className={classes.drawerIcon} />
                 </div>
               </li>
               <Divider />
-              <li className={classes.drawerItem}>
+              <li
+                className={classes.drawerItem}
+                onClick={() => setOpenDrawer(false)}
+              >
                 <div className={classes.drawerText}>Skóra</div>
                 <div className={classes.drawerIconContainer}>
                   <RightArrowIcon className={classes.drawerIcon} />
                 </div>
               </li>
               <Divider />
-              <li className={classes.drawerItem}>
+              <li
+                className={classes.drawerItem}
+                onClick={() => setOpenDrawer(false)}
+              >
                 <div className={classes.drawerText}>Akcesoria</div>
                 <div className={classes.drawerIconContainer}>
                   <RightArrowIcon className={classes.drawerIcon} />
                 </div>
               </li>
               <Divider />
-              <li className={classes.drawerItem}>
+              <li
+                className={classes.drawerItem}
+                onClick={() => setOpenDrawer(false)}
+              >
                 <div className={classes.drawerText}>Marki</div>
               </li>
               <Divider />
